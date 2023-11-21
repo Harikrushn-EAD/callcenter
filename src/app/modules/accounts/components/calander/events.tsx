@@ -4,7 +4,6 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
-import {D} from '@fullcalendar/core/internal-common'
 
 const EventsCalanderComponents = () => {
   const [currentEvents, setCurrentEvents] = useState([])
@@ -79,6 +78,32 @@ const EventsCalanderComponents = () => {
         navLinks={true}
         dayMaxEvents={true}
         select={handleDateSelect}
+        initialEvents={[
+          {
+            id: '12315',
+            title: 'All-day event',
+            date: '2023-11-15',
+          },
+          {
+            id: '5123',
+            title: 'Morning event',
+            date: '2023-11-21',
+            start: '2023-11-21T08:00:00+05:30',
+            end: '2023-11-21T09:30:00+05:30',
+          },
+          {
+            id: '5123',
+            title: 'Afternoon event',
+            date: '2023-11-21',
+            start: '2023-11-21T13:30:00+05:30',
+            end: '2023-11-21T16:00:00+05:30',
+          },
+          {
+            id: '5123',
+            title: 'Full event',
+            date: '2023-11-29',
+          },
+        ]}
         eventClick={handleEventClick}
         eventsSet={handleEvents as any}
       />
