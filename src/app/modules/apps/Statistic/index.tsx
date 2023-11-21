@@ -1,7 +1,9 @@
 import React from 'react'
 import {StatisticsWidget} from '../../../../_metronic/partials/widgets/statistics/StatisticsWidget'
+import MainStatistics from '../../../pages/dashboard/statistics'
 
 const AppStatistic = () => {
+  return <MainStatistics />
   return (
     <div className='row g-5 g-xl-8'>
       <div className='col-xl-3'>

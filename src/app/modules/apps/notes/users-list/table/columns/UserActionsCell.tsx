@@ -8,9 +8,9 @@ import {useQueryResponse} from '../../core/QueryResponseProvider'
 import {deleteUser} from '../../core/_requests'
 
 type Props = {
-  id: ID
-  action?: any
-  select?: string
+  id: ID,
+  action?: any,
+  select?: string,
 }
 
 const UserActionsCell: FC<Props> = ({id, action, select}) => {
@@ -23,7 +23,7 @@ const UserActionsCell: FC<Props> = ({id, action, select}) => {
   }, [])
 
   const openEditModal = () => {
-    // setItemIdForUpdate(id)
+    setItemIdForUpdate(id)
   }
 
   const deleteItem = useMutation(() => deleteUser(id), {
@@ -63,26 +63,26 @@ const UserActionsCell: FC<Props> = ({id, action, select}) => {
 
         {/* begin::Menu item */}
         {action?.two && (
-          <div className='menu-item px-3'>
-            <a
-              className='menu-link px-3'
-              data-kt-users-table-filter='delete_row'
-              onClick={() => {}}
-            >
-              {action?.two}
-            </a>
-          </div>
+        <div className='menu-item px-3'>
+          <a
+            className='menu-link px-3'
+            data-kt-users-table-filter='delete_row'
+            onClick={async () => await deleteItem.mutateAsync()}
+          >
+            {action?.two}
+          </a>
+        </div>
         )}
         {action?.three && (
-          <div className='menu-item px-3'>
-            <a
-              className='menu-link px-3'
-              data-kt-users-table-filter='delete_row'
-              onClick={() => {}}
-            >
-              {action?.three}
-            </a>
-          </div>
+        <div className='menu-item px-3'>
+          <a
+            className='menu-link px-3'
+            data-kt-users-table-filter='delete_row'
+            onClick={async () => await deleteItem.mutateAsync()}
+          >
+            {action?.three}
+          </a>
+        </div>
         )}
 
         {/* end::Menu item */}

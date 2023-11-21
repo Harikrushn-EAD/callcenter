@@ -17,6 +17,7 @@ const PrivateRoutes = () => {
   const UsersPage = lazy(() => import('../modules/apps/user-management/UsersPage'))
   const RolesPage = lazy(() => import('../modules/apps/role-management/RolesPage'))
   const CustomersPage = lazy(() => import('../modules/apps/customer-management/CustomersPage'))
+  const NotesPage = lazy(() => import('../modules/apps/notes/NotesPage'))
   const SettingPage = lazy(() => import('../modules/apps/settings/index'))
   const StaffPage = lazy(() => import('../modules/apps/staff-management/StaffPage'))
   const EventCalander = lazy(() => import('../modules/apps/calander/index'))
@@ -145,6 +146,14 @@ const PrivateRoutes = () => {
           element={
             <SuspensedView>
               <CustomersPage />
+            </SuspensedView>
+          }
+        />
+        <Route
+          path='notes/*'
+          element={
+            <SuspensedView>
+              <NotesPage />
             </SuspensedView>
           }
         />

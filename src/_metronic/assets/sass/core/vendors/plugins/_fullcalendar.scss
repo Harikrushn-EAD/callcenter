@@ -159,8 +159,8 @@ body {
 
   // Dot event
   .fc-daygrid-dot-event {
-    background-color: var(--#{$prefix}light);
-    color: var(--#{$prefix}gray-600);
+    background-color: #f6c000 ;
+    color:#ffffff;
 
     .fc-event-title {
       font-weight: $font-weight-semibold;
@@ -168,8 +168,8 @@ body {
 
     &:hover,
     &.fc-event-mirror {
-      background-color: var(--#{$prefix}light);
-      color: var(--#{$prefix}primary);
+      background-color: #f6c000 ;
+      color:#ffffff;
     }
   }
 

@@ -214,6 +214,100 @@ const StaffActionForm: FC<Props> = ({user, isUserLoading}) => {
           </div>
         </div>
 
+        {/* begin::Input group */}
+        <div className='mb-7'>
+          {/* begin::Label */}
+          <label className='required fw-bold fs-6 mb-5'>Role</label>
+          {/* end::Label */}
+          {/* begin::Roles */}
+          {/* begin::Input row */}
+          <div className='d-flex fv-row'>
+            {/* begin::Radio */}
+            <div className='form-check form-check-custom form-check-solid'>
+              {/* begin::Input */}
+              <input
+                className='form-check-input me-3'
+                {...formik.getFieldProps('role')}
+                name='role'
+                type='radio'
+                value='Administrator'
+                id='kt_modal_update_role_option_0'
+                checked={formik.values.role === 'Administrator'}
+                disabled={formik.isSubmitting || isUserLoading}
+              />
+
+              {/* end::Input */}
+              {/* begin::Label */}
+              <label className='form-check-label' htmlFor='kt_modal_update_role_option_0'>
+                <div className='fw-bolder text-gray-800'>Administrator</div>
+                <div className='text-gray-600'>
+                  Best for business owners and company administrators
+                </div>
+              </label>
+              {/* end::Label */}
+            </div>
+            {/* end::Radio */}
+          </div>
+          {/* end::Input row */}
+          <div className='separator separator-dashed my-5'></div>
+          {/* begin::Input row */}
+          <div className='d-flex fv-row'>
+            {/* begin::Radio */}
+            <div className='form-check form-check-custom form-check-solid'>
+              {/* begin::Input */}
+              <input
+                className='form-check-input me-3'
+                {...formik.getFieldProps('role')}
+                name='role'
+                type='radio'
+                value='Developer'
+                id='kt_modal_update_role_option_1'
+                checked={formik.values.role === 'Developer'}
+                disabled={formik.isSubmitting || isUserLoading}
+              />
+              {/* end::Input */}
+              {/* begin::Label */}
+              <label className='form-check-label' htmlFor='kt_modal_update_role_option_1'>
+                <div className='fw-bolder text-gray-800'>Developer</div>
+                <div className='text-gray-600'>
+                  Best for developers or people primarily using the API
+                </div>
+              </label>
+              {/* end::Label */}
+            </div>
+            {/* end::Radio */}
+          </div>
+          {/* end::Input row */}
+          <div className='separator separator-dashed my-5'></div>
+          {/* begin::Input row */}
+          <div className='d-flex fv-row'>
+            {/* begin::Radio */}
+            <div className='form-check form-check-custom form-check-solid'>
+              {/* begin::Input */}
+              <input
+                className='form-check-input me-3'
+                {...formik.getFieldProps('role')}
+                name='role'
+                type='radio'
+                value='Analyst'
+                id='kt_modal_update_role_option_2'
+                checked={formik.values.role === 'Analyst'}
+                disabled={formik.isSubmitting || isUserLoading}
+              />
+
+              {/* end::Input */}
+              {/* begin::Label */}
+              <label className='form-check-label' htmlFor='kt_modal_update_role_option_2'>
+                <div className='fw-bolder text-gray-800'>Custom role</div>
+              </label>
+              {/* end::Label */}
+            </div>
+            {/* end::Radio */}
+          </div>
+          {/* end::Roles */}
+        </div>
+        {/* end::Input group */}
+
         <div className='text-center pt-6'>
           <button
             type='submit'

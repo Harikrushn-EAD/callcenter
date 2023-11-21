@@ -22,7 +22,7 @@ const SidebarMenuMain = () => {
           <span className='menu-section text-muted text-uppercase fs-8 ls-1'>Crafted</span>
         </div>
       </div> */}
-      <SidebarMenuItemWithSub
+      {/* <SidebarMenuItemWithSub
         to='/dashboard'
         title='Dashboard'
         fontIcon='bi-archive'
@@ -32,7 +32,12 @@ const SidebarMenuMain = () => {
         <SidebarMenuItem to='/app/settings' title='Settings' />
         <SidebarMenuItem to='/app/calendar' title='Calendar' />
         <SidebarMenuItem to='/app/compliance_security' title='Compliance & Security' />
-      </SidebarMenuItemWithSub>
+      </SidebarMenuItemWithSub> */}
+        <SidebarMenuItem to='/dashboard' title='Dashboard'/>
+        <SidebarMenuItem to='/app/staff' title='Staff' />
+        <SidebarMenuItem to='/app/settings' title='Settings' />
+        <SidebarMenuItem to='/app/calendar' title='Calendar' />
+        <SidebarMenuItem to='/app/compliance_security' title='Compliance & Security' />
       <SidebarMenuItemWithSub
         to='/customers'
         title='Customers'

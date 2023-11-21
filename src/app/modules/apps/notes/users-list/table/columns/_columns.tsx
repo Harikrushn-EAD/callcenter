@@ -8,7 +8,7 @@ import {UserSelectionCell} from './UserSelectionCell'
 import {UserCustomHeader} from './UserCustomHeader'
 import {UserSelectionHeader} from './UserSelectionHeader'
 import {User} from '../../core/_models'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const customersColumns: ReadonlyArray<Column<User>> = [
   {
@@ -76,22 +76,22 @@ const customersColumns: ReadonlyArray<Column<User>> = [
       />
     ),
   },
-  // {
-  //   Header: (props) => (
-  //     <UserCustomHeader tableProps={props} title='Actions' className='text-center min-w-125px' />
-  //   ),
-  //   id: 'actions',
-  //   Cell: ({...props}) => (
-  //     <UserActionsCell
-  //       id={props.data[props.row.index].id}
-  //       select={'Actions'}
-  //       action={{
-  //         one: 'Edit',
-  //         two: 'Delete',
-  //       }}
-  //     />
-  //   ),
-  // },
+  {
+    Header: (props) => (
+      <UserCustomHeader tableProps={props} title='Actions' className='text-center min-w-125px' />
+    ),
+    id: 'actions',
+    Cell: ({...props}) => (
+      <UserActionsCell
+        id={props.data[props.row.index].id}
+        select={'Actions'}
+        action={{
+          one: 'Edit',
+          two: 'Delete',
+        }}
+      />
+    ),
+  },
   {
     Header: (props) => (
       <UserCustomHeader tableProps={props} title='Note' className='text-center min-w-125px' />
@@ -103,15 +103,16 @@ const customersColumns: ReadonlyArray<Column<User>> = [
       const openAddNotePage = () => {
         navigate('/notes/add')
       }
-
+      
       return (
         <div className='d-flex justify-content-center'>
           <a className='menu-link cursor-pointer' onClick={openAddNotePage}>
-            <span class='badge badge-light-primary fs-8 fw-bold px-6 py-4'>Add note</span>
+          <span class='badge badge-light-primary fs-8 fw-bold'>Add note</span>
           </a>
         </div>
       )
-    },
+
+    }
   },
 ]
 

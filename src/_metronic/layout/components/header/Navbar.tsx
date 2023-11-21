@@ -13,17 +13,17 @@ const Navbar = () => {
   const {config} = useLayout()
   return (
     <div className='app-navbar flex-shrink-0'>
-      <div className={clsx('app-navbar-item align-items-stretch', itemClass)}>
+      {/* <div className={clsx('app-navbar-item align-items-stretch', itemClass)}>
         <Search />
-      </div>
+      </div> */}
 
-      <div className={clsx('app-navbar-item', itemClass)}>
+      {/* <div className={clsx('app-navbar-item', itemClass)}>
         <div id='kt_activities_toggle' className={btnClass}>
           <KTIcon iconName='chart-simple' className={btnIconClass} />
         </div>
-      </div>
+      </div> */}
 
-      <div className={clsx('app-navbar-item', itemClass)}>
+      {/* <div className={clsx('app-navbar-item', itemClass)}>
         <div
           data-kt-menu-trigger="{default: 'click'}"
           data-kt-menu-attach='parent'
@@ -33,17 +33,35 @@ const Navbar = () => {
           <KTIcon iconName='element-plus' className={btnIconClass} />
         </div>
         <HeaderNotificationsMenu />
-      </div>
+      </div> */}
 
-      <div className={clsx('app-navbar-item', itemClass)}>
+      {/* <div className={clsx('app-navbar-item', itemClass)}>
         <div className={clsx('position-relative', btnClass)} id='kt_drawer_chat_toggle'>
           <KTIcon iconName='message-text-2' className={btnIconClass} />
           <span className='bullet bullet-dot bg-success h-6px w-6px position-absolute translate-middle top-0 start-50 animation-blink' />
         </div>
+      </div> */}
+
+      {/* <div className={clsx('app-navbar-item', itemClass)}>
+        <ThemeModeSwitcher toggleBtnClass={clsx('btn-active-light-primary btn-custom')} />
+      </div> */}
+
+      <div className='d-flex fw-semibold align-items-center' style={{marginRight: '15px'}}>
+        <div className='text-gray-500 flex-grow-1 me-4'>Calls being answered by AI</div>
+        <div className='fw-bolder text-gray-700 text-xxl-end'>300</div>
+      </div>
+      <div className='d-flex fw-semibold align-items-center' style={{marginRight: '15px'}}>
+        <div className='text-gray-500 flex-grow-1 '>AI Assistant(on / off)</div>
       </div>
 
-      <div className={clsx('app-navbar-item', itemClass)}>
-        <ThemeModeSwitcher toggleBtnClass={clsx('btn-active-light-primary btn-custom')} />
+      <div className='form-check form-check-custom form-check-solid form-check-success form-switch'>
+        <div className='form-check form-check-custom form-check-solid form-switch'>
+          <input
+            className='form-check-input'
+            type='checkbox'
+            name='model.app.sidebar.default.fixed.desktop'
+          />
+        </div>
       </div>
 
       <div className={clsx('app-navbar-item', itemClass)}>

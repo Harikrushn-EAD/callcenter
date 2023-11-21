@@ -5,6 +5,7 @@ import {toAbsoluteUrl} from '../../../../helpers'
 type Props = {
   className: string
   description: string
+  subTitle?: string
   icon: boolean
   stats: number
   labelColor: string
@@ -25,7 +26,7 @@ const items: Array<{
   {name: 'Barry Walter', src: toAbsoluteUrl('/media/avatars/300-12.jpg')},
 ]
 
-const CardsWidget7 = ({className, description, icon, stats, labelColor, textColor}: Props) => (
+const CardsWidget7 = ({className, description, subTitle, icon, stats, labelColor, textColor}: Props) => (
   <div className={`card card-flush ${className}`}>
     <div className='card-header pt-5'>
       <div className='card-title d-flex flex-column'>
@@ -36,7 +37,7 @@ const CardsWidget7 = ({className, description, icon, stats, labelColor, textColo
       </div>
     </div>
     <div className='card-body d-flex flex-column justify-content-end pe-0'>
-      <span className='fs-6 fw-bolder text-gray-800 d-block mb-2'>Today’s Heroes</span>
+      <span className='fs-6 fw-bolder text-gray-800 d-block mb-2'>{subTitle}</span>
       <div className='symbol-group symbol-hover flex-nowrap'>
         {items.map((item, index) => (
           <div

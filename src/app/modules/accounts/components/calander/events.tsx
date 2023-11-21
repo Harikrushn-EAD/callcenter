@@ -39,41 +39,32 @@ const EventsCalanderComponents = () => {
     setCurrentEvents(events)
   }
 
-  function renderEventContent(eventInfo: {
-    timeText:
-      | boolean
-      | React.ReactChild
-      | React.ReactFragment
-      | React.ReactPortal
-      | null
-      | undefined
-    event: {
-      title: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined
-    }
-  }) {
-    return (
-      <>
-        <b>{eventInfo.timeText}</b>
-        <i>{eventInfo.event.title}</i>
-      </>
-    )
-  }
-
-  function renderSidebarEvent(event: {
-    id: React.Key | null | undefined
-    start: D
-    title: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined
-  }) {
-    return (
-      <li key={event.id}>
-        <b>{formatDate(event.start, {year: 'numeric', month: 'short', day: 'numeric'})}</b>
-        <i>{event.title}</i>
-      </li>
-    )
-  }
-
   return (
     <div>
+      <div className='d-flex justify-content-end'>
+        <div className='me-4'>
+          <select
+            name='status'
+            data-control='select2'
+            data-hide-search='true'
+            className='form-select form-select-sm form-select-white w-95px mb-4'
+            defaultValue='Service Type'
+          >
+            <option value='Service Type'>Service Type</option>
+          </select>
+        </div>
+        <div className='me-4'>
+          <select
+            name='status'
+            data-control='select2'
+            data-hide-search='true'
+            className='form-select form-select-sm form-select-white w-95px mb-4'
+            defaultValue='Staff'
+          >
+            <option value='Staff'>Staff</option>
+          </select>
+        </div>
+      </div>
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         headerToolbar={{
@@ -85,16 +76,11 @@ const EventsCalanderComponents = () => {
         editable={true}
         selectable={true}
         selectMirror={true}
+        navLinks={true}
         dayMaxEvents={true}
         select={handleDateSelect}
-        eventContent={renderEventContent} // custom render function
         eventClick={handleEventClick}
-        eventsSet={handleEvents as any} // called after events are initialized/added/changed/removed
-        /* you can update a remote database when these fire:
-            eventAdd={function(){}}
-            eventChange={function(){}}
-            eventRemove={function(){}}
-            */
+        eventsSet={handleEvents as any}
       />
     </div>
   )
